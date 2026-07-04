@@ -1,8 +1,39 @@
-/* CSS HEX */
 body {
     background-color: #e6f2ff;
+    margin: 0;
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
 }
 
 h1 {
     color: #ba15ac;
+    margin: 0;
+}
+
+.menu-container {
+    margin-left: auto;   /* Pushes it to the far right */
+    position: relative;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.menu-button img {
+    width: 32px;
+    height: 32px;
+}
+
+.popout-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
 }
