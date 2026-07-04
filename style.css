@@ -9,31 +9,87 @@ body {
     align-items: center;
 }
 
+/* Title */
 h1 {
     color: #ba15ac;
     margin: 0;
 }
 
+/* Push menu to far right */
 .menu-container {
-    margin-left: auto;   /* Pushes it to the far right */
+    margin-left: auto;
     position: relative;
 }
 
+/* Button reset */
 .menu-button {
     background: none;
     border: none;
     padding: 0;
+    margin: 0;
     cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
 }
 
-.menu-button img {
+/* SVG size */
+.menu-button svg {
+    display: block;
     width: 32px;
     height: 32px;
 }
 
+/* Star base color */
+.menu-button svg path {
+    fill: #ba15ac;
+    transition: fill 0.2s ease;
+}
+
+/* Star hover color */
+.menu-container:hover .menu-button svg path {
+    fill: #ffe148;
+}
+
+/* Focus state (keyboard accessibility) */
+.menu-button:focus {
+    outline: none;
+}
+
+.menu-button:focus-visible {
+    outline: 2px solid #ffefa2;
+    outline-offset: 4px;
+    border-radius: 50%;
+}
+
+/* Dropdown menu (hidden by default) */
 .popout-menu {
     display: none;
     position: absolute;
     top: 40px;
     right: 0;
+
+    background: white;
+    border: 1px solid #ccc;
+    padding: 8px 0;
+    min-width: 180px;
+}
+
+/* Show dropdown on hover */
+.menu-container:hover .popout-menu,
+.menu-container:focus-within .popout-menu {
+    display: block;
+}
+
+/* Dropdown items */
+.popout-menu a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #ba15ac;
+}
+
+/* Hover effect on items */
+.popout-menu a:hover {
+    background: #ffefa2;
 }
